@@ -1,31 +1,37 @@
+
 class RPS
-
- options = ["rock", "paper", "scissors"]
- computerMove = options[rand(options.length)]
-
 
   def wins?(playerMove, computerMove)
 
-    if (playerMove == computerMove)
+    if (playerMove === computerMove)
       return "Tie game, play again"
     elsif( playerMove == "rock" && computerMove == "scissors")
-      return "win"
+      return " you win!"
     elsif(playerMove == "paper" && computerMove == "rock")
-      return "win"
+      return " you win!"
     elsif(playerMove == "scissors" && computerMove == "paper")
-      return "win"
+      return " you win!"
     else
-      return "Please enter Rock, Paper or Scissors"
+      return "You lose, try again"
     end
   end
+end
 
+
+x=0
+while x<10
+  game = RPS.new()
+  options = ["rock", "paper", "scissors"]
+  computerMove = options[rand(options.length)]
+  puts "Choose a move:'rock' or 'paper' or 'scissors'."
+  playerMove = gets.chomp
+  puts "Computer chooses " + computerMove
+  puts game.wins?(playerMove, computerMove)
 end
 
 
 
-
 #
-# puts "Choose a move:'rock', 'paper' or 'scissors'."
 # move = gets.chomp
 #
 # puts wins?(move,computerMove)
